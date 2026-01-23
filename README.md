@@ -18,7 +18,7 @@ Outdoor vision systems are frequently impaired by heavy rain, which introduces d
 
 We recommend using Anaconda to manage the python environment.
 
-
+```bash
 # 1. Create a virtual environment
 conda create -n wgrd python=3.8
 conda activate wgrd
@@ -29,12 +29,13 @@ pip install torch torchvision --index-url [https://download.pytorch.org/whl/cu11
 # 3. Install required dependencies
 pip install pytorch-lightning albumentations opencv-python matplotlib torchmetrics scipy
 
+```
 
 ## 📂 Dataset Preparation
 
 Please organize your datasets as follows. The `datamodule.py` is configured to read from this structure automatically.
 
-
+```text
 datasets/
 ├── Rain100H/
 │   ├── train/
@@ -51,6 +52,7 @@ datasets/
         ├── data/
         └── gt/
 
+```
 
 ## ⚡ Training
 
@@ -58,6 +60,7 @@ To train the WGRD model, run `train.py`. The script supports automatic precision
 
 ### Train on Rain100H (Default)
 
+```bash
 python train.py \
     --dataset Rain100H \
     --data_dir datasets/Rain100H \
@@ -67,9 +70,11 @@ python train.py \
     --mode residual \
     --lr_scheduler_type CosineAnnealingLR
 
+```
 
 ### Train on RainDrop
 
+```bash
 python train.py \
     --dataset RainDrop \
     --data_dir datasets/RainDrop \
@@ -77,7 +82,7 @@ python train.py \
     --log_dir logs/wgrd_raindrop \
     --denoising_model WGRD_WaveUnet
 
-
+```
 
 **Key Arguments:**
 
@@ -90,17 +95,21 @@ python train.py \
 
 To evaluate the model on the test set, use `test.py`. This uses the efficient **5-step inference** logic described in the paper.
 
-
+```bash
 python test.py \
     --dataset Rain100H \
     --data_dir datasets/Rain100H \
     --log_dir results/test_rain100h \
     --model_ckpt logs/wgrd_rain100h/lightning_logs/version_0/checkpoints/best.ckpt
 
+```
 
 Results (PSNR/SSIM metrics and saved images) will be stored in `log_dir`.
-
 
 ## 📧 Contact
 
 If you have any questions regarding the code or the paper, please feel free to open an GitHub issue.
+
+```
+
+```
