@@ -1,7 +1,7 @@
 # Wavelet-Guided Residual Diffusion for Enhanced Heavy Rain Image Restoration
 [![DOI](https://zenodo.org/badge/1140577421.svg)](https://doi.org/10.5281/zenodo.18350102)
 
-> **Note:** This repository contains the official PyTorch implementation of the manuscript **"Wavelet-Guided Residual Diffusion for Enhanced Heavy Rain Image Restoration"**, currently submitted to **The Visual Computer**. The code is provided to ensure the transparency and reproducibility of our experiments.
+> **Note:** This repository contains the official PyTorch implementation of the manuscript **"Wavelet-Guided Residual Diffusion for Enhanced Heavy Rain Image Restoration"**, currently submitted to **The Journal of Supercomputing**. The code is provided to ensure the transparency and reproducibility of our experiments.
 
 ## 📖 Abstract
 
